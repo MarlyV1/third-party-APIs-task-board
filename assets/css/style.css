@@ -14,3 +14,22 @@ body {
 .task-card:hover {
   cursor: grab;
 }
+
+/* Styles the modal */
+.title-and-date {
+display: flex;
+justify-content: space-around;
+}
+
+.add-task-btn {
+  margin: 40px auto 10px;
+ text-align: center
+;}
+
+.task-description {
+  margin: auto 11px;
+} 
+
+textarea {
+  height: 6rem;
+}
