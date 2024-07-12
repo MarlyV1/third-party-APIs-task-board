@@ -2,29 +2,24 @@
 let taskList = JSON.parse(localStorage.getItem("tasks")) || [];
 let nextId = JSON.parse(localStorage.getItem("nextId")) || 0;
 
-const newTask = document.getElementById('todo-cards');
-// Todo: create a function to generate a unique task id
+
+//Generates a unique task id
 function generateTaskId() {
     ++nextId;
     localStorage.setItem('nextId', nextId);
     return nextId;
 }
 
-// Todo: create a function to create a task card
+//Creates a task card
 function createTaskCard(task) {
-
-    newTask.innerHTML = `
-        <div class="card text-bg-light mb-3" style="max-width: 18rem;">
-            <div class="card-header">
-                <h5>${task.title}</h5>
-            </div>
-            <div class="card-body">
-                <p class="card-title">${task.description}</p>
-                <p class="card-text">${task.dueDate}</p>
-                <a href="#" class="btn btn-danger">Delete</a>
-            </div>
-        </div>
-    `;
+    const taskCard = $("<div>").addClass("card w-75 task-card my-3").attr("data-task-id", task.id);
+    const cardHeader = $("<div>").addClass("card-header h4").text(task.title);
+    const cardBody = $("<div>").addClass("card-body");
+    const cardDescription = $("<p>").addClass("card-text").text(task.description);
+    const cardDueDate = $("<p>").addClass("card-text").text(task.dueDate);
+    const cardDeleteBtn = $("<button>").addClass("btn btn-danger delete").text("Delete");
+    cardDeleteBtn.on("click", handleDeleteTask);
+   
 };
 
 // Todo: create a function to render the task list and make cards draggable
