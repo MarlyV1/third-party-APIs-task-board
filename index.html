@@ -37,19 +37,19 @@
               <div class="title-and-date">
                 <div class="mb-3">
                   <label for="title-name" class="col-form-label">Task Title</label>
-                  <input type="text" class="form-control" id="title-name">
+                  <input type="text" class="form-control" id="title-name" required>
                 </div>
                 <div class="mb-3">
                   <label for="due-date" class="col-form-label">Task Due Date</label>
-                  <input type="text" class="form-control" id="due-date">
+                  <input type="date" class="form-control" id="due-date" required>
                 </div>
               </div>
               <div class="task-description mb-3">
                 <label for="description-text" class="col-form-label">Task Description</label>
-                <textarea class="form-control" id="description-text"></textarea>
+                <textarea class="form-control" id="description-text" required></textarea>
               </div>
               <div class="add-task-btn">
-                <button type="button" class=" btn btn-success">Add Task</button>
+                <button type="button" class=" btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
               </div>
             </form>
           </div>

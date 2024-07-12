@@ -33,3 +33,7 @@ justify-content: space-around;
 textarea {
   height: 6rem;
 }
+
+#due-date {
+  width: 206px;
+}
