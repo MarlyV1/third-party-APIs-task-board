@@ -52,9 +52,15 @@ function renderTaskList() {
     }
 }
 
-// Todo: create a function to handle adding a new task
+//Handles a new task being added
 function handleAddTask(event){
-
+    const newTask = {
+        id: generateTaskId(),
+        title: $('#title-name').val(),
+        dueDate: $('#due-date').val(),
+        description: $('#description-text').val(),
+        status: 'to-do'
+    }
 }
 
 // Todo: create a function to handle deleting a task
