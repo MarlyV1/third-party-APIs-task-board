@@ -50,6 +50,7 @@ function renderTaskList() {
             $('#done-cards').append(createTaskCard(task))
         }
     }
+    $('.task-card').draggable({opacity: 0.7, zIndex: 100})
 }
 
 //Handles a new task being added
