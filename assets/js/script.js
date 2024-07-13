@@ -54,7 +54,7 @@ function renderTaskList() {
 }
 
 //Handles a new task being added
-function handleAddTask(event){
+function handleAddTask(){
     const newTask = {
         id: generateTaskId(),
         title: $('#title-name').val(),
@@ -78,7 +78,7 @@ function handleDeleteTask(event){
     renderTaskList();
 }
 
-// Todo: create a function to handle dropping a task into a new status lane
+//Handles a task being dropped into a new status lane
 function handleDrop(event, ui) {
     const taskId = ui.draggable[0].dataset.taskId;
     const newStatus = event.target.id;
@@ -91,7 +91,12 @@ function handleDrop(event, ui) {
     renderTaskList();
 }
 
-// Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
+//When the page loads, the task list is rendered, there is an add event listener for the form, and the lanes are droppable
 $(document).ready(function () {
-
+    renderTaskList();
+    $('.lane').droppable({accept: '.task-card', drop: handleDrop})
+    $('form').on("submit", (e) => {
+        e.preventDefault;
+        handleAddTask();
+    })
 });
