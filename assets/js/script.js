@@ -54,7 +54,7 @@ function renderTaskList() {
 }
 
 //Handles a new task being added
-function handleAddTask(){
+function handleAddTask(event){
     const newTask = {
         id: generateTaskId(),
         title: $('#title-name').val(),
